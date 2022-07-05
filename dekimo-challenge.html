@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Victor Ghys Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Components -->
+		<script src="components/navigation.js" type="text/javascript" defer></script>
+		<script src="components/footer.js" type="text/javascript" defer></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Victor Ghys</a>
+					</header>
+
+				<!-- Nav -->
+				<navigation-component></navigation-component>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<!--<span class="date">June 30, 2022</span>-->
+									<h1><a href="https://www.dekimo.com/challenge/" target="_blank" rel="noopener noreferrer">Dekimo Embedded Challenge</a></h1>
+									
+								</header>
+								<div class="image"><img src="images/dekimo-challenge.jpg" alt="" /></div>
+								<p>
+									The goal of the dekimo challenge was to program an Arduino nano every to identify large factorials and find two missing numbers. 
+									And make the program run in the shortest time as possible. 
+									The challenge consisted of three main parts. Identify the factorial, find the missing numbers and time your execution time.
+								</p>
+								<p>
+									To identify the factorial which was between 100! and 999! it is imposible to calculate them all, because these numbers are just too big for the Arduino to do calculations on.
+									So, the solution was to use a mathematical trait of the big factorials, that is that starting from 7! they have an unique length. 
+									I then precalculated the mapping of number length to the factorial with the Dmitry Kamenetsky's formula. 
+									This way we can identify the factorial instantaneous with just its length.
+								</p>
+								<p>
+									Next we need to find the missing numbers in the factorial which are always marked xy, always consecutive and never both zero.
+									To solve this I used the divisibility rules of nine and eleven, because factorials starting from 11! have nine and eleven as factors. 
+									The divisibility rule of nine states that the sum of all the digits must be divisible by nine. 
+									And the divisibility rule of eleven states that the difference between the sum of the numbers at odd places and sum of numbers at even places must be divisible by eleven.
+									With these two rules we get two equasions wich we can solve to find the missing numbers.
+								</p>
+								<p>
+									Lastly, we need to find out the execution time of our code using a hardware timer. 
+									For this we can not use millis() or micros(), because these are too inaccurate.
+									First I was looking at way too complex ways to time my code with hardware interupts, but this was too slow. 
+									The way I did it in the end was to set the clock count of the processor to zero to start the timer. 
+									And after executing look at the clock count and multiply it by the duration of each clock.
+								</p>
+								<p>
+									One funny thing is that the reading in of the big factorials takes a long time. 
+									During this time the processor is mostly just waiting for the digits to arrive and doing noting. 
+									We can exploit this time to already calculate the missing numbers. 
+									Meaning once we receive the return character that terminates the input, we already have calculated everthing. 
+									The only thing we then need to do in the timed part of our code is to set one of the GPIO-pins high (this is for verifying with an oscilloscope). 
+									For this it is important to not use the normal digitalWrite(), because it is too slow. 
+									I used the digitalWriteFast() from the MegaCoreX library which compiles down to a single instruction. 
+									So in the end my program runs in one instruction which is 50ns on the 20MHz nano every board. 
+								</p>
+								<p>
+									I was happy that I got to the most optimised solution. 
+									It took me a long time to finish the challenge, because I was busy with my internship at the time (hense why I am not on the scoreboard). 
+									Still it was a fun challenge in which I learned a lot of new things about micro controllers. 
+								</p>
+								<ul class="actions special">
+									<li><a href="https://www.dekimo.com/challenge/" class="button" target="_blank" rel="noopener noreferrer">View Challenge Website</a></li>
+								</ul>
+								<!-- <ul class="actions special">
+									<li><a href="https://github.com/VictorGhys/Planet-Disaster" class="button" target="_blank" rel="noopener noreferrer">View Source</a></li>
+								</ul> -->
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer-component></footer-component>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
