@@ -11,6 +11,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- Components -->
+		<script src="components/navigation.js" type="text/javascript" defer></script>
+		<script src="components/footer.js" type="text/javascript" defer></script>
 	</head>
 	<body class="is-preload">
 
@@ -23,23 +26,7 @@
 					</header>
 
 				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Projects</a></li>
-							<li><a href="art.html">Art</a></li>
-							<li><a href="Victor Ghys CV.pdf" target="_blank" rel="noopener noreferrer">Resume (CV)</a></li>
-							<li class="active"><a href="chess-bot.html">Wave Function Collapse</a></li>
-							<!--<li><a href="elements.html">Elements Reference</a></li> -->
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/victor-ghys-446bb9198/" class="icon brands fa-linkedin" target="_blank" rel="noopener noreferrer"><span
-								class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/VictorGhys" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span
-								class="label">GitHub</span></a></li>
-							<li><a href="mailto:victor.ghys@gmail.com" class="icon regular alt fa-envelope" target="_blank" rel="noopener noreferrer"><span
-								class="label">Email</span></a></li>
-						</ul>
-					</nav>
+				<navigation-component></navigation-component>
 
 				<!-- Main -->
 					<div id="main">
@@ -80,62 +67,7 @@
 					</div>
 
 				<!-- Footer -->
-				<footer id="footer">
-					<!-- <section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="3"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-										</ul>
-									</form>
-								</section> -->
-		
-					<section class="split contact">
-						<section class="alt">
-							<h3>Location</h3>
-							<p>Leuven, Belgium</p>
-						</section>
-						<!-- <section>
-										<h3>Phone</h3>
-										<p><a href="#">(000) 000-0000</a></p>
-									</section> -->
-						<section>
-							<h3>Email</h3>
-							<p><a href="mailto:victor.ghys@gmail.com">victor.ghys@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-								<!-- <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li> -->
-								<li><a href="https://www.linkedin.com/in/victor-ghys-446bb9198/"
-										class="icon brands alt fa-linkedin" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/VictorGhys" class="icon brands alt fa-github" target="_blank" rel="noopener noreferrer"><span
-											class="label">GitHub</span></a></li>
-								<li><a href="mailto:victor.ghys@gmail.com" class="icon regular alt fa-envelope" target="_blank" rel="noopener noreferrer"><span
-									class="label">Email</span></a></li>
-							</ul>
-						</section>
-					</section>
-				</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+				<footer-component></footer-component>
 
 			</div>
 
