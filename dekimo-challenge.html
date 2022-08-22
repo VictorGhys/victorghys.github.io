@@ -40,44 +40,44 @@
 								</header>
 								<div class="image right"><img src="images/dekimo-challenge.jpg" alt="" /></div>
 								<p>
-									The goal of the dekimo challenge was to program an Arduino nano every to identify large factorials and find two missing numbers. 
+									The goal of the dekimo challenge was to program an <b>Arduino nano every</b> microcontroller to <b>identify large factorials and find two missing numbers</b>. 
 									And make the program run in the shortest time as possible. 
-									The challenge consisted of three main parts. Identify the factorial, find the missing numbers and time your execution time.
+									The challenge consisted of three main parts. <b>Identify the factorial</b>, <b>find the missing numbers</b> and <b>time your execution time</b>.
 								</p>
 								<p>
-									To identify the factorial which was between 100! and 999! it is imposible to calculate them all, because these numbers are just too big for the Arduino to do calculations on.
+									To <b>identify the factorial</b> which was between 100! and 999! it is imposible to calculate them all, because these numbers are just too big for the Arduino to do calculations on.
 									So, the solution was to use a mathematical trait of the big factorials, that is that starting from 7! they have an unique length. 
-									I then precalculated the mapping of number length to the factorial with the Dmitry Kamenetsky's formula. 
-									This way we can identify the factorial instantaneous with just its length.
+									I then precalculated the mapping of number length to the factorial with the <b>Dmitry Kamenetsky's formula</b>. 
+									This way we can <b>identify</b> the factorial <b>instantaneous</b> with just its length.
 								</p>
 								<p>
-									Next we need to find the missing numbers in the factorial which are always marked xy, always consecutive and never both zero.
-									To solve this I used the divisibility rules of nine and eleven, because factorials starting from 11! have nine and eleven as factors. 
+									Next we need to <b>find the missing numbers</b> in the factorial which are always marked xy, always consecutive and never both zero.
+									To solve this I used the <b>divisibility rules</b> of nine and eleven, because factorials starting from 11! have nine and eleven as factors. 
 									The divisibility rule of nine states that the sum of all the digits must be divisible by nine. 
 									And the divisibility rule of eleven states that the difference between the sum of the numbers at odd places and sum of numbers at even places must be divisible by eleven.
-									With these two rules we get two equasions wich we can solve to find the missing numbers.
+									With these two rules we get <b>two equasions</b> wich we can solve to find the missing numbers.
 								</p>
 								<p>
-									Lastly, we need to find out the execution time of our code using a hardware timer. 
+									Lastly, we need to <b>find out the execution time</b> of our code using a <b>hardware timer</b>. 
 									For this we can not use millis() or micros(), because these are too inaccurate.
 									First I was looking at way too complex ways to time my code with hardware interupts, but this was too slow. 
-									The way I did it in the end was to set the clock count of the processor to zero to start the timer. 
-									And after executing look at the clock count and multiply it by the duration of each clock.
+									The way I did it in the end was to set the <b>clock count</b> of the processor to zero to start the timer. 
+									And after executing look at the clock count and multiply it by the duration of each clock cycle.
 								</p>
 								<p>
-									One funny thing is that the reading in of the big factorials takes a long time. 
+									One funny thing is that the <b>reading in</b> of the big factorials <b>takes a long time</b>. 
 									During this time the processor is mostly just waiting for the digits to arrive and doing noting. 
-									We can exploit this time to already calculate the missing numbers. 
+									We can exploit this time to <b>already calculate the missing numbers</b>. 
 									Meaning once we receive the return character that terminates the input, we already have calculated everthing. 
-									The only thing we then need to do in the timed part of our code is to set one of the GPIO-pins high (this is for verifying with an oscilloscope). 
-									For this it is important to not use the normal digitalWrite(), because it is too slow. 
-									I used the digitalWriteFast() from the MegaCoreX library which compiles down to a single instruction. 
-									So in the end my program runs in one instruction which is 50ns on the 20MHz nano every board. 
+									The only thing we then need to do in the timed part of our code is to set one of the <b>GPIO-pins high</b> (this is for verifying with an oscilloscope). 
+									For this it is important to not use the normal <b>digitalWrite()</b>, because it is <b>too slow</b>. 
+									I used the <b>digitalWriteFast()</b> from the MegaCoreX library which compiles down to a single instruction. 
+									So in the end my program runs in <b>only ONE instruction</b> which is 50ns on the 20MHz nano every board. 
 								</p>
 								<p>
 									I was happy that I got to the most optimised solution. 
 									It took me a long time to finish the challenge, because I was busy with my internship at the time (hense why I am not on the scoreboard). 
-									Still it was a fun challenge in which I learned a lot of new things about micro controllers. 
+									Still it was a fun challenge in which I <b>learned a lot</b> of new things about microcontrollers. 
 								</p>
 								<ul class="actions special">
 									<li><a href="https://www.dekimo.com/challenge/" class="button" target="_blank" rel="noopener noreferrer">View Challenge Website</a></li>
