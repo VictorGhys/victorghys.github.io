@@ -9,7 +9,8 @@ class Footer extends HTMLElement {
 			<section class="split contact">
 				<section class="alt">
 					<h3>Location</h3>
-					<p>Leuven, Belgium</p>
+					<p>Rotterdam, Netherlands</p>
+					<!-- <p>Leuven, Belgium</p> -->
 				</section>
 				<!-- <section>
 								<h3>Phone</h3>
