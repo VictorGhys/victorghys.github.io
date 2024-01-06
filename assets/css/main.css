@@ -2602,7 +2602,7 @@ input, select, textarea {
 			max-width: 46%;
 		}
 
-			.image.left img, .image.right img {
+			.image.left img, .image.right img, .image.custom img {
 				width: 100%;
 			}
 
@@ -2631,7 +2631,12 @@ input, select, textarea {
 			.image.fit img {
 				width: 100%;
 			}
-
+		.image.custom {
+			margin: 1.5rem 0;
+			margin-top: 0;
+			width: 75%;
+		}
+			
 		.image.main {
 			display: block;
 			margin: 4rem 0;

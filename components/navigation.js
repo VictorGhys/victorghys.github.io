@@ -8,7 +8,7 @@ class Navigation extends HTMLElement {
 		<nav id="nav">
 			<ul class="links">
 				<li class="active"><a href="index.html">Projects</a></li>
-				<li><a href="jams.html">Game Jams</a></li>
+				<!--<li><a href="jams.html">Game Jams</a></li> -->
 				<li><a href="art.html">Art</a></li>
 				<li><a href="Victor Ghys CV.pdf" target="_blank" rel="noopener noreferrer">Resume (CV)</a></li>
 				<!-- <li><a href="generic.html">Generic Page</a></li> -->
@@ -47,7 +47,7 @@ class Navigation extends HTMLElement {
 		<nav id="nav">
 			<ul class="links">
 				<li><a href="index.html">Projects</a></li>
-				<li class="active"><a href="jams.html">Game Jams</a></li>
+				<!--<li class="active"><a href="jams.html">Game Jams</a></li> -->
 				<li><a href="art.html">Art</a></li>
 				<li><a href="Victor Ghys CV.pdf" target="_blank" rel="noopener noreferrer">Resume (CV)</a></li>
 				<!-- <li><a href="generic.html">Generic Page</a></li> -->
@@ -85,7 +85,7 @@ class Navigation extends HTMLElement {
 		<nav id="nav">
 			<ul class="links">
 				<li><a href="index.html">Projects</a></li>
-				<li><a href="jams.html">Game Jams</a></li>
+				<!--<li><a href="jams.html">Game Jams</a></li> -->
 				<li class="active"><a href="art.html">Art</a></li>
 				<li><a href="Victor Ghys CV.pdf" target="_blank" rel="noopener noreferrer">Resume (CV)</a></li>
 				<!-- <li><a href="generic.html">Generic Page</a></li> -->
